@@ -1,14 +1,15 @@
 import dayjs, { Dayjs } from 'dayjs';
-import { noteOnce } from 'rc-util/lib/warning';
-import weekday from 'dayjs/plugin/weekday';
-import localeData from 'dayjs/plugin/localeData';
-import weekOfYear from 'dayjs/plugin/weekOfYear';
-import weekYear from 'dayjs/plugin/weekYear';
+import 'dayjs/locale/de';
+import 'dayjs/locale/zh-cn';
 import advancedFormat from 'dayjs/plugin/advancedFormat';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
+import localeData from 'dayjs/plugin/localeData';
 import updateLocale from 'dayjs/plugin/updateLocale';
+import weekday from 'dayjs/plugin/weekday';
+import weekOfYear from 'dayjs/plugin/weekOfYear';
+import weekYear from 'dayjs/plugin/weekYear';
+import { noteOnce } from 'rc-util/lib/warning';
 import { GenerateConfig } from '.';
-import 'dayjs/locale/zh-cn';
 
 dayjs.extend(customParseFormat);
 dayjs.extend(advancedFormat);
@@ -34,6 +35,7 @@ const localeMap: IlocaleMapObject = {
   en_US: 'en',
   zh_CN: 'zh-cn',
   zh_TW: 'zh-tw',
+  de_DE: 'de',
 };
 
 const parseLocale = (locale: string) => {
@@ -76,22 +78,10 @@ const generateConfig: GenerateConfig<Dayjs> = {
   isValidate: date => date.isValid(),
 
   locale: {
-    getWeekFirstDay: locale =>
-      dayjs()
-        .locale(parseLocale(locale))
-        .localeData()
-        .firstDayOfWeek(),
+    getWeekFirstDay: locale => dayjs().locale(parseLocale(locale)).localeData().firstDayOfWeek(),
     getWeek: (locale, date) => date.locale(parseLocale(locale)).week(),
-    getShortWeekDays: locale =>
-      dayjs()
-        .locale(parseLocale(locale))
-        .localeData()
-        .weekdaysMin(),
-    getShortMonths: locale =>
-      dayjs()
-        .locale(parseLocale(locale))
-        .localeData()
-        .monthsShort(),
+    getShortWeekDays: locale => dayjs().locale(parseLocale(locale)).localeData().weekdaysMin(),
+    getShortMonths: locale => dayjs().locale(parseLocale(locale)).localeData().monthsShort(),
     format: (locale, date, format) => date.locale(parseLocale(locale)).format(format),
     parse: (locale, text, formats) => {
       const localeStr = parseLocale(locale);
@@ -102,9 +92,7 @@ const generateConfig: GenerateConfig<Dayjs> = {
           // parse Wo
           const year = formatText.split('-')[0];
           const weekStr = formatText.split('-')[1];
-          const firstWeek = dayjs(year, 'YYYY')
-            .startOf('year')
-            .locale(localeStr);
+          const firstWeek = dayjs(year, 'YYYY').startOf('year').locale(localeStr);
           for (let j = 0; j <= 52; j += 1) {
             const nextWeek = firstWeek.add(j, 'week');
             if (nextWeek.format('Wo') === weekStr) {

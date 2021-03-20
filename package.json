@@ -1,6 +1,6 @@
 {
-  "name": "@jnoodle/rc-picker",
-  "version": "2.0.10",
+  "name": "@geezee/rc-picker",
+  "version": "0.0.1",
   "description": "React date & time picker",
   "keywords": [
     "react",
@@ -16,13 +16,13 @@
     "lib",
     "dist"
   ],
-  "homepage": "https://jnoodle.github.io/picker",
+  "homepage": "https://geezee-it.de",
   "repository": {
     "type": "git",
-    "url": "git@github.com:jnoodle/picker.git"
+    "url": "git@github.com:GeeZee-iT/picker.git"
   },
   "bugs": {
-    "url": "http://github.com/jnoodle/picker/issues"
+    "url": "https://github.com/GeeZee-iT/picker/issues"
   },
   "license": "MIT",
   "scripts": {
