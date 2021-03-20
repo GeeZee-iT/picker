@@ -3,47 +3,27 @@
 Function enhanced and bug fixed [react-component/picker](https://github.com/react-component/picker)
 
 [![NPM version][npm-image]][npm-url]
-[![build status][circleci-image]][circleci-url]
-[![Codecov][codecov-image]][codecov-url]
-[![Dependencies][david-image]][david-url]
-[![DevDependencies][david-dev-image]][david-dev-url]
-[![npm download][download-image]][download-url]
 [![bundle size][bundlephobia-image]][bundlephobia-url]
 
-[npm-image]: http://img.shields.io/npm/v/@jnoodle/rc-picker.svg?style=flat-square
-[npm-url]: http://npmjs.org/package/@jnoodle/rc-picker
-[circleci-image]: https://img.shields.io/circleci/build/github/react-component/picker/master?style=flat-square
-[circleci-url]: https://circleci.com/gh/react-component/picker
-[codecov-image]: https://img.shields.io/codecov/c/github/react-component/picker/master.svg?style=flat-square
-[codecov-url]: https://codecov.io/gh/react-component/picker/branch/master
-[david-url]: https://david-dm.org/react-component/picker
-[david-image]: https://david-dm.org/react-component/picker/status.svg?style=flat-square
-[david-dev-url]: https://david-dm.org/react-component/picker?type=dev
-[david-dev-image]: https://david-dm.org/react-component/picker/dev-status.svg?style=flat-square
-[download-image]: https://img.shields.io/npm/dm/@jnoodle/rc-picker.svg?style=flat-square
-[download-url]: https://npmjs.org/package/@jnoodle/rc-picker
-[bundlephobia-url]: https://bundlephobia.com/result?p=@jnoodle/rc-picker
-[bundlephobia-image]: https://badgen.net/bundlephobia/minzip/@jnoodle/rc-picker
+[npm-image]: http://img.shields.io/npm/v/@geezee/rc-picker.svg?style=flat-square
+[npm-url]: http://npmjs.org/package/@geezee/rc-picker
+[bundlephobia-url]: https://bundlephobia.com/result?p=@geezee/rc-picker
+[bundlephobia-image]: https://badgen.net/bundlephobia/minzip/@geezee/rc-picker
 
-## Live Demo
-
-https://jnoodle.github.io/picker/
 
 ## Install
 
-[![@jnoodle/rc-picker](https://nodei.co/npm/@jnoodle/rc-picker.png)](https://npmjs.org/package/@jnoodle/rc-picker)
+[![@geezee/rc-picker](https://nodei.co/npm/@geezee/rc-picker.png)](https://npmjs.org/package/@geezee/rc-picker)
 
 ## Usage
 
 ```js
-import Picker from '@jnoodle/rc-picker';
-import '@jnoodle/rc-picker/assets/index.css';
+import Picker from '@geezee/rc-picker';
+import '@geezee/rc-picker/assets/index.css';
 import { render } from 'react-dom';
 
 render(<Picker />, mountNode);
 ```
-
-## API
 
 ### Picker
 
@@ -159,4 +139,4 @@ npm start
 
 ## License
 
-@jnoodle/rc-picker is released under the MIT license.
+@geezee/rc-picker is released under the MIT license.
