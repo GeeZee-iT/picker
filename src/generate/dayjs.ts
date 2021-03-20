@@ -38,9 +38,9 @@ const localeMap: IlocaleMapObject = {
   de_DE: 'de',
 };
 
-const parseLocale = (locale: string) => {
+const parseLocale = (locale: string): LocalePresetType => {
   const mapLocale = localeMap[locale];
-  return mapLocale || locale.split('_')[0];
+  return (mapLocale || locale.split('_')[0]) as LocalePresetType;
 };
 
 const parseNoMatchNotice = () => {
