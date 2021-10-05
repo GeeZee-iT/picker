@@ -2,7 +2,7 @@ export default {
   cjs: 'babel',
   esm: { type: 'babel', importLibToEs: true },
   preCommit: {
-    eslint: true,
+    eslint: false,
     prettier: true,
   },
   runtimeHelpers: true,
