@@ -237,9 +237,8 @@ function InnerRangePicker<DateType>(props: RangePickerProps<DateType>) {
   });
 
   // Operation ref
-  const operationRef: React.MutableRefObject<ContextOperationRefProps | null> = useRef<
-    ContextOperationRefProps
-  >(null);
+  const operationRef: React.MutableRefObject<ContextOperationRefProps | null> =
+    useRef<ContextOperationRefProps>(null);
 
   const mergedDisabled = React.useMemo<[boolean, boolean]>(() => {
     if (Array.isArray(disabled)) {
@@ -753,10 +752,8 @@ function InnerRangePicker<DateType>(props: RangePickerProps<DateType>) {
       panelHoverRangedValue = hoverRangedValue;
     }
 
-    let panelShowTime:
-      | boolean
-      | SharedTimeProps<DateType>
-      | undefined = showTime as SharedTimeProps<DateType>;
+    let panelShowTime: boolean | SharedTimeProps<DateType> | undefined =
+      showTime as SharedTimeProps<DateType>;
     if (showTime && typeof showTime === 'object' && showTime.defaultValue) {
       const timeDefaultValues: DateType[] = showTime.defaultValue!;
       panelShowTime = {
@@ -1069,7 +1066,7 @@ function InnerRangePicker<DateType>(props: RangePickerProps<DateType>) {
             <input
               id={id}
               disabled={mergedDisabled[0]}
-              readOnly={inputReadOnly || !startTyping}
+              readOnly={true}
               value={startHoverValue || startText}
               onChange={e => {
                 triggerStartTextChange(e.target.value);
@@ -1094,7 +1091,7 @@ function InnerRangePicker<DateType>(props: RangePickerProps<DateType>) {
           >
             <input
               disabled={mergedDisabled[1]}
-              readOnly={inputReadOnly || !endTyping}
+              readOnly={true}
               value={endHoverValue || endText}
               onChange={e => {
                 triggerEndTextChange(e.target.value);

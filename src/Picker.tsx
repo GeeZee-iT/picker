@@ -197,9 +197,8 @@ function InnerPicker<DateType>(props: PickerProps<DateType>) {
   const [selectedValue, setSelectedValue] = React.useState<DateType | null>(mergedValue);
 
   // Operation ref
-  const operationRef: React.MutableRefObject<ContextOperationRefProps | null> = React.useRef<
-    ContextOperationRefProps
-  >(null);
+  const operationRef: React.MutableRefObject<ContextOperationRefProps | null> =
+    React.useRef<ContextOperationRefProps>(null);
 
   // Open
   const [mergedOpen, triggerInnerOpen] = useMergedState(false, {
@@ -499,7 +498,7 @@ function InnerPicker<DateType>(props: PickerProps<DateType>) {
               id={id}
               tabIndex={tabIndex}
               disabled={disabled}
-              readOnly={inputReadOnly || !typing}
+              readOnly={true}
               value={hoverValue || text}
               onChange={e => {
                 triggerTextChange(e.target.value);
