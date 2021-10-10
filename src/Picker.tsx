@@ -282,6 +282,24 @@ function InnerPicker<DateType>(props: PickerProps<DateType>) {
     }
   };
 
+  const onInternalClick: React.MouseEventHandler<HTMLDivElement> = (...args) => {
+    if (onClick) {
+      onClick(...args);
+    }
+
+    if (inputRef.current) {
+      inputRef.current.focus();
+      triggerOpen(true);
+    }
+  };
+
+  const onInternalTouch: React.TouchEventHandler<HTMLDivElement> = (...args) => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+      triggerOpen(true);
+    }
+  };
+
   // ============================= Input =============================
   const [inputProps, { focused, typing }] = usePickerInput({
     blurToCancel: needConfirmButton,
@@ -482,11 +500,12 @@ function InnerPicker<DateType>(props: PickerProps<DateType>) {
           })}
           style={style}
           onMouseDown={onMouseDown}
-          onMouseUp={onInternalMouseUp}
+          onMouseUp={onMouseUp}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
           onContextMenu={onContextMenu}
-          onClick={onClick}
+          onTouchStart={onInternalTouch}
+          onClick={onInternalClick}
         >
           <div
             className={classNames(`${prefixCls}-input`, {

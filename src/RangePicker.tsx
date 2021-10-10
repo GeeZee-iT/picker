@@ -629,6 +629,20 @@ function InnerRangePicker<DateType>(props: RangePickerProps<DateType>) {
     }
   };
 
+  const onPanelTouch = (e: TouchEvent) => {
+    if (
+      !mergedOpen &&
+      !startInputRef.current.contains(e.target as Node) &&
+      !endInputRef.current.contains(e.target as Node)
+    ) {
+      if (!mergedDisabled[0]) {
+        triggerOpenAndFocus(0);
+      } else if (!mergedDisabled[1]) {
+        triggerOpenAndFocus(1);
+      }
+    }
+  };
+
   const onPickerMouseDown = (e: MouseEvent) => {
     // shouldn't affect input elements if picker is active
     if (
@@ -1053,6 +1067,7 @@ function InnerRangePicker<DateType>(props: RangePickerProps<DateType>) {
           })}
           style={style}
           onClick={onPickerClick}
+          onTouchStart={onPanelTouch}
           onMouseDown={onPickerMouseDown}
           {...getDataOrAriaProps(props)}
         >
