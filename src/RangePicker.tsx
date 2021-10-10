@@ -630,11 +630,7 @@ function InnerRangePicker<DateType>(props: RangePickerProps<DateType>) {
   };
 
   const onPanelTouch = (e: TouchEvent) => {
-    if (
-      !mergedOpen &&
-      !startInputRef.current.contains(e.target as Node) &&
-      !endInputRef.current.contains(e.target as Node)
-    ) {
+    if (!mergedOpen) {
       if (!mergedDisabled[0]) {
         triggerOpenAndFocus(0);
       } else if (!mergedDisabled[1]) {
